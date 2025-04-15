@@ -2,6 +2,7 @@ import {useState} from "react";
 import {useNavigate} from "react-router-dom";
 import api from "../api";
 import {ACCESS_TOKEN, REFRESH_TOKEN} from "../constants";
+import "../styles/Form.css";
 
 function Form({route, method}) {
     const [username, setUsername] = useState("");
@@ -37,7 +38,7 @@ function Form({route, method}) {
     const name = method === "login" ? "Login" : "Register"
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="form-container">
             <h2>{name}</h2>
             <input
                 type="text"
@@ -59,3 +60,5 @@ function Form({route, method}) {
         </form>
     );
 }
+
+export default Form;
